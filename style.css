@@ -6,7 +6,83 @@ body {
 
 /* Navbar */
 .navbar {
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar:hover {
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
+}
+
+/* Navbar Brand (Título) */
+.navbar-brand {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #00d4ff 0%, #0099ff 50%, #ff006e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    font-style: italic;
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.navbar-brand:hover {
+    transform: scale(1.1) rotateZ(-2deg);
+    filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.6));
+}
+
+/* Links da Navbar */
+.navbar-nav .nav-link {
+    position: relative;
+    margin: 0 8px;
+    font-weight: 600;
+    color: #e0e0e0 !important;
+    transition: all 0.3s ease;
+    padding: 8px 12px !important;
+    border-radius: 4px;
+}
+
+.navbar-nav .nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #00d4ff, #0099ff);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover {
+    color: #00d4ff !important;
+    background-color: rgba(0, 212, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link:hover::before {
+    width: 80%;
+}
+
+.navbar-nav .nav-link.active {
+    color: #00d4ff !important;
+    background-color: rgba(0, 212, 255, 0.15);
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+    border: 2px solid #00d4ff;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler:hover {
+    background-color: rgba(0, 212, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
 }
 
 /* Container Principal */
@@ -164,5 +240,13 @@ h3 {
 
     .btn {
         font-size: 14px;
+    }
+
+    .navbar-brand {
+        font-size: 22px;
+    }
+
+    .navbar-nav .nav-link {
+        margin: 5px 0;
     }
 }
